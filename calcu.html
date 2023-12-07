@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Calculator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+    input {
+      margin-bottom: 10px;
+      width: 200px;
+      padding: 5px;
+    }
+    button {
+      width: 50px;
+      height: 30px;
+    }
+  </style>
+</head>
+<body>
+  <h2>Calculator</h2>
+  <input type="text" id="result" readonly="readonly" /><br/>
+  <button onclick="clearResult()">C</button>
+  <button onclick="deleteCharacter()">&larr;</button>
+  <br/>
+  <button onclick="appendToResul(7)">7</button>
+  <button onclick="appendToResul(8)">8</button>
+  <button onclick="appendToResul(9)">9</button>
+  <button onclick="appendToResul('/')">/</button>
+  <br/>
+  <button onclick="appendToResul(4)">4</button>
+  <button onclick="appendToResul(5)">5</button>
+  <button onclick="appendToResul(6)">6</button>
+  <button onclick="appendToResul('*')">*</button>
+  <br/>
+  <button onclick="appendToResul(1)">1</button>
+  <button onclick="appendToResul(2)">2</button>
+  <button onclick="appendToResul(3)">3</button>
+  <button onclick="appendToResul('-')">-</button>
+  <br/>
+  <button onclick="appendToResul(0)">0</button>
+  <button onclick="appendToResul('.')">.</button>
+  <button onclick="calculateResult()">=</button>
+  <button onclick="appendToResul('+')">+</button>
+
+  <script>
+    function appendToResul(value) {
+      document.getElementById("result").value += value;
+    }
+
+    function clearResult() {
+      document.getElementById("result").value = "";
+    }
+
+    function deleteCharacter() {
+      var result = document.getElementById("result").value;
+	document.getElementById("result").value= ";
+      
+
+    }
+
+    function calculateResult() {
+      var result = document.getElementById("result").value;
+      document.getElementById("result").value =  eval(result);
+    }
+  </script>
+</body>
+</html>
